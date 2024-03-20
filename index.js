@@ -23,14 +23,14 @@ app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
 
 //response handler middleware
-app.use((obj, req, res, next)=>{
-    const statusCode = obj.status || 500;
-    const message = obj.message || "something Went wrong";
+app.use((err, req, res, next) => {
+    const statusCode = err.status || 500;
+    const message = err.message || "Something went wrong";
     return res.status(statusCode).json({
-        success: [200,201,204].some(a=> a===obj.status)? true: false,
+        success: [200, 201, 204].some(a => a === statusCode) ? true : false,
         status: statusCode,
         message: message,
-        obj: obj.data
+        obj: err.data
     });
 });
 
