@@ -34,9 +34,6 @@ app.use((err, req, res, next) => {
     });
 });
 
-
-
-
 //db connection
 const connectMongoDB = async () => {
     try {
@@ -46,7 +43,6 @@ const connectMongoDB = async () => {
         throw error;
     }
 }
-
 
 app.listen(port, () => {
     connectMongoDB();
