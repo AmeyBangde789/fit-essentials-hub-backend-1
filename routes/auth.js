@@ -16,7 +16,7 @@ router.post("/admin-login", adminLogin);
 
 //register as admin
 router.post("/register-admin",registerAdmin)
-export default router;
+
 
 //send reset email
 
@@ -24,3 +24,5 @@ router.post("/send-email",sendEmail)
 
 //rest password
 router.post("/reset-password", resetPassword)
+
+export default router;

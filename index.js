@@ -7,7 +7,6 @@ import authRoute from './routes/auth.js';
 import userRoute from './routes/user.js';
 import cookieParser from 'cookie-parser';
 
-
 const app = express();
 const port = process.env.PORT
 dotenv.config();
@@ -15,7 +14,7 @@ dotenv.config();
 app.use(express.json()); 
 app.use(cookieParser());
 app.use(cors({
-    origin:'https://mean-stack-project-frontend.onrender.com',
+    origin:'https://fit-essentials-hub.onrender.com',
     credentials: true
 }))
 app.use("/api/role", roleRoute);
